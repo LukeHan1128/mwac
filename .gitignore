@@ -1,2 +1,3 @@
 chromedriver/*
+crowd_test.conf
 main_test.py
