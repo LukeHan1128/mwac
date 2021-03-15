@@ -1,9 +1,11 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import os
+import os, time
+
+from script import user_api
 
 conf='crowd_test.conf'
-d='chromedriver'
+d='webdriver'
 s='script'
 path_chromedriver='./'+d+'/chromedriver'
 url=''
@@ -43,5 +45,7 @@ def init():
   driver.find_element_by_id('j_username').send_keys(username)
   driver.find_element_by_id('j_password').send_keys(userpassword)
   driver.find_element_by_id('form-container').submit()
+
+  user_api.fnt_search_user(driver)
 
 init()
